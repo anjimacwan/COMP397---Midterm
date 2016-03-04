@@ -31,8 +31,8 @@ var scenes;
             this._imagesDisplay = new Array();
             for (var roll = 0; roll < 2; roll++) {
                 this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
-                this._imagesDisplay[roll].x = 216 + (roll * 84);
-                this._imagesDisplay[roll].y = 220;
+                this._imagesDisplay[roll].x = 200 + (roll * 290);
+                this._imagesDisplay[roll].y = 200;
                 this.addChild(this._imagesDisplay[roll]);
                 console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
             }
