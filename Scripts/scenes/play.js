@@ -62,6 +62,7 @@ var scenes;
             //Add images on Roll click
             var bitmap = this._rollDice();
             for (var roll = 0; roll < 2; roll++) {
+                this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
             }
             /*this._reels[reel].x = 216 + (reel * 84);
             this._reels[reel].y = 220;

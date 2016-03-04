@@ -99,7 +99,7 @@ module scenes {
            var bitmap:string[] = this._rollDice();
             
             for(var roll:number = 0; roll < 2; roll++){
-               // this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
+               this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
             }
            
                 
