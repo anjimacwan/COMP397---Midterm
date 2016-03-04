@@ -4,9 +4,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _playLabel: objects.Label;
         private _rollButton: objects.Button;
-        
-    
-        
+      
         private _imagesDisplay:createjs.Bitmap[];
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -19,11 +17,12 @@ module scenes {
         public start(): void {
 
             //Add Play Label
-            this._playLabel = new objects.Label(
+           /* this._playLabel = new objects.Label(
                 "PLAY SCENE","60px Consolas", 
                 "#000000", 
                 config.Screen.CENTER_X,config.Screen.CENTER_Y);
             this.addChild(this._playLabel);
+            */
             
             // add the Roll button to the PLAY scene
             this._rollButton = new objects.Button(
@@ -35,6 +34,15 @@ module scenes {
             // Start Roll event listener
             this._rollButton.on("click", this._rollButtonClick, this);
             
+            // Initialize Array of Bitmaps 
+            this._imagesDisplay = new Array<createjs.Bitmap>();
+            for(var roll:number = 0; roll < 2; roll++) {
+                this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
+                this._imagesDisplay[roll].x = 216 + (roll * 84);
+                this._imagesDisplay[roll].y = 220;
+                 this.addChild(this._imagesDisplay[roll]);
+                console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
+            }
             
             // add this scene to the global stage container
             stage.addChild(this);
@@ -49,10 +57,10 @@ module scenes {
         {
         // Initialize Array of Bitmaps 
             this._imagesDisplay = new Array<createjs.Bitmap>();
-            for(var roll:number = 0; roll < 3; roll++) {
+            for(var roll:number = 0; roll < 2; roll++) {
                 this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
-                this._imagesDisplay[roll].x = 216 + (roll * 84);
-                this._imagesDisplay[roll].y = 220;
+                this._imagesDisplay[roll].x = 75 + (roll * 290);
+                this._imagesDisplay[roll].y = 60;
                  this.addChild(this._imagesDisplay[roll]);
                 console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
             }
