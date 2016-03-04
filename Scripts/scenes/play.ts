@@ -59,27 +59,27 @@ module scenes {
             for (var spin = 0; spin < 2; spin++) {
                 outCome[spin] = Math.floor((Math.random() * 6) + 1);
                 switch (outCome[spin]) {
-                    case outCome[spin, spin]:  
+                    case 1:  
                         betLine[spin] = "1";
                         break;
                       
-                      case outCome[spin, spin]:  
+                      case 2:  
                         betLine[spin] = "2";
                         break;
                       
-                       case outCome[spin, spin]:  
+                       case 3:  
                         betLine[spin] = "3";
                         break;
                       
-                       case outCome[spin, spin]:  
+                       case 4:  
                         betLine[spin] = "4";
                         break;
                       
-                       case outCome[spin, spin]:  
+                       case 5:  
                         betLine[spin] = "5";
                         break;
                       
-                       case outCome[spin, spin]:  
+                       case 6:  
                         betLine[spin] = "6";
                         break;
                       
@@ -100,6 +100,7 @@ module scenes {
             
             for(var roll:number = 0; roll < 2; roll++){
                this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
+               this.addChild(this._imagesDisplay[roll]);
             }
            
                 
