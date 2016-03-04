@@ -22,6 +22,19 @@ var scenes;
                  config.Screen.CENTER_X,config.Screen.CENTER_Y);
              this.addChild(this._playLabel);
              */
+            /*this._playLabel1 = new objects.Label(
+                "1","30px Consolas",
+                "#000000",
+                230 ,320);
+            this.addChild(this._playLabel1);
+            
+            
+            this._playLabel2 = new objects.Label(
+                "1","30px Consolas",
+                "#000000",
+                430 ,320);
+            this.addChild(this._playLabel2);
+            */
             // add the Roll button to the PLAY scene
             this._rollButton = new objects.Button("Roll", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180);
             this.addChild(this._rollButton);
@@ -31,7 +44,7 @@ var scenes;
             this._imagesDisplay = new Array();
             for (var roll = 0; roll < 2; roll++) {
                 this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
-                this._imagesDisplay[roll].x = 150 + (roll * 200);
+                this._imagesDisplay[roll].x = 180 + (roll * 200);
                 this._imagesDisplay[roll].y = 200;
                 this.addChild(this._imagesDisplay[roll]);
                 console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
@@ -62,21 +75,45 @@ var scenes;
                 switch (outCome[spin]) {
                     case 1:
                         betLine[spin] = "1";
+                        this._playLabel1 = new objects.Label("1", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("1", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                     case 2:
                         betLine[spin] = "2";
+                        this._playLabel1 = new objects.Label("2", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("2", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                     case 3:
                         betLine[spin] = "3";
+                        this._playLabel1 = new objects.Label("3", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("3", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                     case 4:
                         betLine[spin] = "4";
+                        this._playLabel1 = new objects.Label("4", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("4", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                     case 5:
                         betLine[spin] = "5";
+                        this._playLabel1 = new objects.Label("5", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("5", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                     case 6:
                         betLine[spin] = "6";
+                        this._playLabel1 = new objects.Label("6", "30px Consolas", "#000000", 230, 320);
+                        this.addChild(this._playLabel1);
+                        this._playLabel2 = new objects.Label("6", "30px Consolas", "#000000", 430, 320);
+                        this.addChild(this._playLabel2);
                         break;
                 }
             }
