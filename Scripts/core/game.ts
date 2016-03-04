@@ -14,12 +14,12 @@ var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
 
+
 var assetData:objects.Asset[] = [
     // Add your Assets here
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
     {id: "StartOverButton", src:"../../Assets/images/StartOverButton.png"},
     {id: "Roll", src:"../../Assets/images/Roll.png"}
-
 ];
 
 function preload() {

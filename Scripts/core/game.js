@@ -13,7 +13,8 @@ var end;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
-    { id: "StartOverButton", src: "../../Assets/images/StartOverButton.png" }
+    { id: "StartOverButton", src: "../../Assets/images/StartOverButton.png" },
+    { id: "Roll", src: "../../Assets/images/Roll.png" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
