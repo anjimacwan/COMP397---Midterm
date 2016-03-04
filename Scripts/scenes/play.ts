@@ -3,8 +3,14 @@ module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _playLabel: objects.Label;
+        private _label1: objects.Label;
+        private _label2: objects.Label;
+        private _label3: objects.Label;
+        private _label4: objects.Label;
+        private _label5: objects.Label;
+        private _label6: objects.Label;
+        
         private _rollButton: objects.Button;
-      
         private _imagesDisplay:createjs.Bitmap[];
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -66,6 +72,8 @@ module scenes {
             }
         }
        
+       
+       //generate random numbers for dice
         private _rollDice(): string[] {
             var betLine = [" ", " "];
             var outCome = [0, 0];
@@ -118,29 +126,6 @@ module scenes {
                this.addChild(this._imagesDisplay[roll]);
             }
           
-            
-           
-           /* this._dice1 = new createjs.Bitmap(assets.getResult("1"));
-            this.addChild(this._dice1); 
-            
-            this._dice1 = new createjs.Bitmap(assets.getResult("2"));
-            this.addChild(this._dice2); 
-            
-            this._dice1 = new createjs.Bitmap(assets.getResult("3"));
-            this.addChild(this._dice3); 
-            
-            this._dice1 = new createjs.Bitmap(assets.getResult("4"));
-            this.addChild(this._dice4); 
-            
-            this._dice1 = new createjs.Bitmap(assets.getResult("5"));
-            this.addChild(this._dice5); 
-            
-            this._dice1 = new createjs.Bitmap(assets.getResult("6"));
-            this.addChild(this._dice6); 
-            
-            */
-            
-            
             
             
         }

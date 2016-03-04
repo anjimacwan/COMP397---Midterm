@@ -53,6 +53,7 @@ var scenes;
                 console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
             }
         };
+        //generate random numbers for dice
         Play.prototype._rollDice = function () {
             var betLine = [" ", " "];
             var outCome = [0, 0];
@@ -89,25 +90,6 @@ var scenes;
                 this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
                 this.addChild(this._imagesDisplay[roll]);
             }
-            /* this._dice1 = new createjs.Bitmap(assets.getResult("1"));
-             this.addChild(this._dice1);
-             
-             this._dice1 = new createjs.Bitmap(assets.getResult("2"));
-             this.addChild(this._dice2);
-             
-             this._dice1 = new createjs.Bitmap(assets.getResult("3"));
-             this.addChild(this._dice3);
-             
-             this._dice1 = new createjs.Bitmap(assets.getResult("4"));
-             this.addChild(this._dice4);
-             
-             this._dice1 = new createjs.Bitmap(assets.getResult("5"));
-             this.addChild(this._dice5);
-             
-             this._dice1 = new createjs.Bitmap(assets.getResult("6"));
-             this.addChild(this._dice6);
-             
-             */
         };
         return Play;
     })(objects.Scene);
