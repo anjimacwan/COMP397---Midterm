@@ -5,14 +5,7 @@ module scenes {
         private _playLabel: objects.Label;
         private _rollButton: objects.Button;
         
-        //Add images
-        
-        private _dice1: createjs.Bitmap;
-        private _dice2: createjs.Bitmap;
-        private _dice3: createjs.Bitmap;
-        private _dice4: createjs.Bitmap;
-        private _dice5: createjs.Bitmap;
-        private _dice6: createjs.Bitmap;
+    
         
         private _imagesDisplay:createjs.Bitmap[];
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -50,6 +43,19 @@ module scenes {
         // PLAY Scene updates here
         public update(): void {
 
+        }
+        
+        private _initializeArray()
+        {
+        // Initialize Array of Bitmaps 
+            this._imagesDisplay = new Array<createjs.Bitmap>();
+            for(var roll:number = 0; roll < 3; roll++) {
+                this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
+                this._imagesDisplay[roll].x = 216 + (roll * 84);
+                this._imagesDisplay[roll].y = 220;
+                 this.addChild(this._imagesDisplay[roll]);
+                console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
+            }
         }
        
         private _rollDice(): string[] {
@@ -98,19 +104,12 @@ module scenes {
            
            var bitmap:string[] = this._rollDice();
             
-            for(var roll:number = 0; roll < 2; roll++){
+            for(var roll:number = 0; roll < 2; roll++)
+            {
                this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
                this.addChild(this._imagesDisplay[roll]);
             }
-           
-                
-                /*this._reels[reel].x = 216 + (reel * 84);
-                this._reels[reel].y = 220;
-                 this.addChild(this._reels[reel]);
-                console.log("reel" + reel + " " + this._reels[reel]);
-                
-                */
-            }
+          
             
            
            /* this._dice1 = new createjs.Bitmap(assets.getResult("1"));

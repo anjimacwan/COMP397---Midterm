@@ -29,6 +29,17 @@ var scenes;
         // PLAY Scene updates here
         Play.prototype.update = function () {
         };
+        Play.prototype._initializeArray = function () {
+            // Initialize Array of Bitmaps 
+            this._imagesDisplay = new Array();
+            for (var roll = 0; roll < 3; roll++) {
+                this._imagesDisplay[roll] = new createjs.Bitmap(assets.getResult("1"));
+                this._imagesDisplay[roll].x = 216 + (roll * 84);
+                this._imagesDisplay[roll].y = 220;
+                this.addChild(this._imagesDisplay[roll]);
+                console.log("Dice" + roll + " " + this._imagesDisplay[roll]);
+            }
+        };
         Play.prototype._rollDice = function () {
             var betLine = [" ", " "];
             var outCome = [0, 0];
@@ -65,12 +76,25 @@ var scenes;
                 this._imagesDisplay[roll].image = assets.getResult(bitmap[roll]);
                 this.addChild(this._imagesDisplay[roll]);
             }
-            /*this._reels[reel].x = 216 + (reel * 84);
-            this._reels[reel].y = 220;
-             this.addChild(this._reels[reel]);
-            console.log("reel" + reel + " " + this._reels[reel]);
-            
-            */
+            /* this._dice1 = new createjs.Bitmap(assets.getResult("1"));
+             this.addChild(this._dice1);
+             
+             this._dice1 = new createjs.Bitmap(assets.getResult("2"));
+             this.addChild(this._dice2);
+             
+             this._dice1 = new createjs.Bitmap(assets.getResult("3"));
+             this.addChild(this._dice3);
+             
+             this._dice1 = new createjs.Bitmap(assets.getResult("4"));
+             this.addChild(this._dice4);
+             
+             this._dice1 = new createjs.Bitmap(assets.getResult("5"));
+             this.addChild(this._dice5);
+             
+             this._dice1 = new createjs.Bitmap(assets.getResult("6"));
+             this.addChild(this._dice6);
+             
+             */
         };
         return Play;
     })(objects.Scene);
